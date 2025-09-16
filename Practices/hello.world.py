@@ -3,4 +3,4 @@ name = input("what is your name?")
 print("Hello," + name + "! Nice to meet you")
 
 food = input("What is your favorite food?")
-print(food + " sounds so yummy!") #CC 6th First python program
+print(food + " sounds so yummy!")
