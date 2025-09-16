@@ -1,4 +1,4 @@
-#CC 6th 
+#CC 6th variables practice 
 
 name = "Charlie"
 num = "9"
