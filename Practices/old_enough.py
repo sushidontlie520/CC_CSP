@@ -11,4 +11,4 @@ elif age >= 15:
 elif age >= 5:
     print("You are old enough to go to school!")
 else:
-    print("You are not old enough for any of these options yet.")
+    print("You are not old enough to go to school.")
