@@ -4,7 +4,7 @@ num = input("Pick a number between 1 and 100.")
 num = 6
 #if num < 10: 
 print(f"{num} is a single didgit number") 
-#if num < 100: 
+#if num < 19:
 print(f"{num} is a two digit number") 
 #if num == 6:
 print("That is the winning number!!! congrats!!!")
@@ -17,3 +17,8 @@ if name == "Baka":
 
 else: 
   print (f"Hello {name}, you are a student")  
+
+#logical operators
+   #AND OR NOT 
+if num>0 and num<18: #and means both must be true 
+  print(f"(num) is a single digit number")
