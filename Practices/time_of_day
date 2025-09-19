@@ -1,0 +1,6 @@
+#CC 6th Time of day
+
+time = input("What time is it in the 24 hour format??")
+
+if time >0: 
+    print("Good morning!")
