@@ -46,13 +46,39 @@ def change_board(num, turn):
         board[4] = turn
     elif num == 5:
         board[5] = turn
-    elif num == 6:
+    if num == 6:
         board[6] = turn
-    elif num == 7:
+    if num == 7:
         board[7] = turn
     elif num == 8:
         board[8] = turn
-
+    
+    
+while game_end == False: 
+    if turns % 2 == 1 and user_input == "X":
+        game_board()
+        player_choice = int(input("Choose a number from 1 to 9?"))
+        if player_choice >= 1 or player_choice <= 9:
+            change_board(player_choice, user_input) 
+            turns += 1
+    elif turns % 2 == 1 and user_input == "O":
+        game_board
+        player_choice = int(input("Choose a number from 1 to 9?"))
+        if player_choice >= 1 or player_choice <= 9: 
+            change_board(player_choice, user_input)
+        turns += 1
+        
+    else:
+        game_board()
+        ai_pick = random.choice(numbers_avaliable)
+        if ai_pick == player_choice:
+            ai_pick = random.choice(numbers_avaliable)
+            change_board(ai_pick, ai_choice)
+            turns +=1
+        else:
+            change_board(ai_pick, ai_choice)
+            turns +=1
+        
 #winning combos Charlie 
 def winner_combos(player): 
     win_combos = [
@@ -64,24 +90,13 @@ def winner_combos(player):
         if all(board[i] == player for i in combo):
             return True
     return False
-    
-    
-while game_end == False: 
-    if turns % 2 == 1 and user_input == "X":
+#Sophie 
+while not game_end:
+    # Player turn
+    if turns % 2 == 1:
         game_board()
-        player_choice = int(input("Choose a number from 1 to 9?"))
+        player_choice = int(input("Choose a number from 1 to 9, PLEASE."))
         if 1 <= player_choice <= 9 and player_choice in numbers_avaliable:
-            change_board(player_choice, user_input) 
-            numbers_avaliable.remove(player_choice)
-            if winner_combos(user_input):
-                game_board()
-                print("You win!")
-                game_end = True
-            turns += 1
-    elif turns % 2 == 1 and user_input == "O":
-        game_board()
-        player_choice = int(input("Choose a number from 1 to 9?"))
-        if 1 <= player_choice <= 9 and player_choice in numbers_avaliable: 
             change_board(player_choice, user_input)
             numbers_avaliable.remove(player_choice)
             if winner_combos(user_input):
@@ -89,18 +104,23 @@ while game_end == False:
                 print("You win!")
                 game_end = True
             turns += 1
-        
+        else:
+            print("Invalid move. Try again.")
+
+    # AI turn
     else:
-        game_board()
-        ai_pick = random.choice(numbers_avaliable)
+        ai_pick = random.choice(numbers_avaliable) 
         change_board(ai_pick, ai_choice)
         numbers_avaliable.remove(ai_pick)
+        print(f"AI chose {ai_pick}")
         if winner_combos(ai_choice):
             game_board()
-            print("AI wins!")
+            print("Ai wins!")
             game_end = True
-        turns +=1
-    if turns > 9: 
+        turns += 1
+
+    # Tie check
+    if not game_end and turns > 9:
         game_board()
-        print("It's a tie!") 
-        game_end = True 
+        print("It's a tie!")
+        game_end = True
