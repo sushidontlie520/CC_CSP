@@ -109,7 +109,7 @@ while not game_end:
 
     # AI turn
     else:
-        ai_pick = random.choice(numbers_avaliable) 
+        ai_pick = random.choice(numbers_avaliable)
         change_board(ai_pick, ai_choice)
         numbers_avaliable.remove(ai_pick)
         print(f"AI chose {ai_pick}")
