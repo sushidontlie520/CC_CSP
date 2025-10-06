@@ -9,10 +9,13 @@ int main(void){
     //bool passing = true;
     printf("What is your letter grade?: ");
     scanf("%c", &grade); 
+    while (getchar() != '\n');
 
 
     printf("What is a number?: ");
     scanf("%d", &num); 
+    while (getchar() != '\n');
+    
     // this imput lets me get space 
     printf("What is your name?: ");
     fgets(name, sizeof(name), stdin);
