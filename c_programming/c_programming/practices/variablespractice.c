@@ -1,0 +1,1 @@
+//CC 6th variables practice in c
