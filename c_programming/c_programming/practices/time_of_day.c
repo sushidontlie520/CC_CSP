@@ -8,7 +8,7 @@ int main(void){
     printf("What is the time in military form without colons??: ");
     scanf("%d", &time);
 
-        if (time >= 0000) {
+        if (time <= 1159) {
         printf("Good morningg!\n");
      } else if (time >= 1200) {
         printf("Good afternoon!\n");
