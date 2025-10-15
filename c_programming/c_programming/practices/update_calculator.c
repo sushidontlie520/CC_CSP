@@ -1,27 +1,22 @@
-//CC 6th upadted financial calculator
+//CC 6th upadted financial calculator in c 
 
 
 #include <stdio.h>
 #include <math.h>
+    float hello(char* name){
+    float number;
+    printf("what is ur spending on: %s\n", name);
+    scanf("%f", &number);
+
+    return number;
+}
+
 
 int main() {
     
     float income, rent, utilities, groceries, transportation;
     float rent_percent, utilities_percent, groceries_percent, transportation_percent, savings_amount, savings_percent, spending;
 
-    printf("What is your monthly income?: ");
-    scanf("%f", &income);
-
-    printf("\nWhat is your monthly rent/mortgage?: ");
-    scanf("%f", &rent);
-
-    printf("\nWhat is your monthly utilities cost?: ");
-    scanf("%f", &utilities);
-
-    printf("\nWhat is your monthly groceries cost?: ");
-    scanf("%f", &groceries);7
-
-    printf("\nWhat is your monthly transportation cost?: ");
     scanf("%f", &transportation);
 
     rent_percent = (rent/income) * 100;
